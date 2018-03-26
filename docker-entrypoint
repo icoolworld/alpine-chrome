@@ -1,13 +1,11 @@
 #!/bin/sh
-#set -ex
-
+set -ex
 # chromium-browser \
 # && --headless --no-sandbox --disable-gpu  \
 # && --remote-debugging-address=0.0.0.0 \
 # && --remote-debugging-port=9222 \
 # && --disable-dev-shm-usage \
 # && --window-size=1920,1080 \
-# \
 # # Disable various background network services, including extension updating,
 # #   safe browsing service, upgrade detector, translate, UMA
 # && --disable-background-networking \
@@ -33,6 +31,5 @@
 # && --safebrowsing-disable-auto-update \
 # # set user data path
 # && --user-data-dir=/data/chrome \
-
-#exec chromedriver --whitelisted-ips=192.168.110.128,127.0.01 --verbose --log-path=/tmp/chromedriver.log $@
-exec chromedriver $@
+#exec chromedriver --whitelisted-ips=192.168.110.128,127.0.0.1 --verbose --log-path=/tmp/chromedriver.log $@
+exec chromedriver "$@"
