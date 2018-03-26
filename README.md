@@ -8,8 +8,8 @@
 
 > 通过启动chromedriver，暴露9515端口，远程连接至该端口，chromedriver会在需要的时候，自动启动chrome进程
 
-> 通过http接口来与chrome的API通信
---whitelisted-ips设置允许哪些IP来访问chromedriver
+> 通过http接口来与chrome的API通信  
+--whitelisted-ips设置允许哪些IP来访问chromedriver  
 -v /dev/shm:/dev/shm 共享主机内存，防止容器crash(session deleted because of page crash)
 ```
 docker run -d \
