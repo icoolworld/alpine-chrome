@@ -33,11 +33,11 @@ RUN mkdir -p /data/chrome && adduser -D chrome \
     && chown -R chrome:chrome /data/chrome
 
 # Run Chrome non-privileged
-#USER chrome
+USER chrome
 
 # chromium port 92222,chromedriver port 9515
 EXPOSE 9222 9515
 
-ENTRYPOINT ["docker-entrypoint"]
+#ENTRYPOINT ["docker-entrypoint"]
 
 # chrome command line https://peter.sh/experiments/chromium-command-line-switches/
