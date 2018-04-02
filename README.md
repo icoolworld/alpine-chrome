@@ -14,13 +14,7 @@
 ```
 docker run -d \
 -v /dev/shm:/dev/shm \
--v /data/chrome/:/data/chrome/ 
--p 9515:9515 ainow/alpine-chrome  
---whitelisted-ips=192.168.110.128,127.0.0.1 \
---verbose \
---name chromedriver
---log-path=/tmp/chromedriver.log
-ainow/alpine-chrome
+ainow/chrome --whitelisted-ips=127.0.0.1 --verbose --log-path=/tmp/chromedriver.log
 ```
 
 ### 启动chrome浏览器

@@ -1,5 +1,5 @@
 #!/bin/sh
-set -ex
+set -e
 # chromium-browser \
 # && --headless --no-sandbox --disable-gpu  \
 # && --remote-debugging-address=0.0.0.0 \
@@ -31,5 +31,11 @@ set -ex
 # && --safebrowsing-disable-auto-update \
 # # set user data path
 # && --user-data-dir=/data/chrome \
-#exec chromedriver --whitelisted-ips=192.168.110.128,127.0.0.1 --verbose --log-path=/tmp/chromedriver.log $@
-exec chromedriver "$@"
+#exec chromedriver --whitelisted-ips=192.168.239.129,127.0.0.1 --verbose --log-path=/tmp/chromedriver.log $@
+
+# first arg is `-f` or `--some-option`
+if [ "${1#-}" != "$1" ]; then
+	set -- chromedriver "$@"
+fi
+
+exec "$@"
